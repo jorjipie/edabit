@@ -1,4 +1,5 @@
-// https://edabit.com/challenge/zWf4ayT7nbTsxYgRe
+/*  https://edabit.com/challenge/zWf4ayT7nbTsxYgRe
+    Reusing Prime Sieve from //https://edabit.com/challenge/sPdaYSjgqpupa2B7q   */
 
 const primeSieve = max => {
     let sieve = Array(max);
@@ -24,7 +25,7 @@ const primeFactorize = num => {
     const primes = getPrimes(num + 1);
     let factors = [], 
         primeIndex = 0;
-
+        
     while (num > 1 && primeIndex < primes.length) {
         if (num % primes[primeIndex] == 0) { 
             num /= primes[primeIndex];
