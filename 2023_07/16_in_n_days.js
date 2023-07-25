@@ -10,7 +10,7 @@ const weekdays =
     'Friday', 
     'Saturday'];
 
-const afterNDays = (arr, shift) => 
+const afterNDays = (arr, shift) =>
     arr.map(day => weekdays[(weekdays.indexOf(day) + shift) % 7]);
 
 console.log(afterNDays(["Saturday","Wednesday","Wednesday"], 10));
