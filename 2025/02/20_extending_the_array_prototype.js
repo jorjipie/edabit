@@ -1,10 +1,20 @@
 // https://edabit.com/challenge/NDRSf8SFHz3rHS4Qm
 
-Array.prototype.square = () => this.map(c => c ** 2);
-Array.prototype.cube = () => this.map(c => c ** 3);
-Array.prototype.divisible_by = x => this.filter(c => c % x == 0);
-Array.prototype.strictly_above = x => this.filter(c => c > x);
-Array.prototype.strictly_below = x => this.filter(c => c < x);
+Array.prototype.square = function() {
+    return this.map(c => c ** 2);
+}
+Array.prototype.cube = function() {
+    return this.map(c => c ** 3);
+}
+Array.prototype.divisible_by = function(x) {
+    return this.filter(c => c % x == 0);
+}
+Array.prototype.strictly_above = function(x) {
+    return this.filter(c => c > x);
+}
+Array.prototype.strictly_below = function(x) {
+    return this.filter(c => c < x);
+}
 
 const Test = require('../../test.js');
 Test.assertSimilar([1, 2, 3].square(), [1, 4, 9])
