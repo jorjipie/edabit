@@ -10,16 +10,7 @@ function hemisphereSeason(hemisphere, date) {
     }
 }
 
-const Test = {
-    assertEquals: (test, control, note) => {
-        if (test === control) { console.log(true); }
-        else {
-            let message = `Failed. Expected ${control}. Got ${test}.`;
-            if (note != null) { message += " " + note; }
-            console.log(message);
-        }
-    }
-}
+const Test = require('../../test.js');
 
 Test.assertEquals(hemisphereSeason("N", "June, 30"), "Summer", "Example #1")
 Test.assertEquals(hemisphereSeason("N", "March, 1"), "Spring", "Example #2")
