@@ -1,15 +1,19 @@
 const assertEquals = (test, control, note) => {
-    if (test === control) { console.log(true); }
+    if (test === control) { 
+        console.log(`✔️  Test Passed: Value == ${control}`); 
+    }
     else {
-        let message = `Failed. Expected ${control}. Got ${test}.`;
+        let message = `❌ FAILED: Expected: ${control}, instead got: ${test}.`;
         if (note != null) { message += " " + note; }
         console.log(message);
     }
 };
 const assertSimilar = (test, control, note) => {
-    if (test.toString() == control.toString()) { console.log(true); }
+    if (test.toString() == control.toString()) { 
+        console.log(`✔️  Test Passed: Value == ${control}`); 
+    }
     else {
-        let message = `Failed. Expected ${control}. Got ${test}.`;
+        let message = `❌ FAILED: Expected: ${control}, instead got: ${test}.`;
         if (note != null) { message += " " + note; }
         console.log(message);
     }
