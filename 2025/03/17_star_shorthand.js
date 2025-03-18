@@ -1,3 +1,5 @@
+// https://edabit.com/challenge/skaEqSDppmQqApNQu
+
 function toStarShorthand(str) {
   const rex = /(.)\1{1,}/g
   const arr = [...str.matchAll(rex)];
