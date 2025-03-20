@@ -9,7 +9,7 @@ const assertEquals = (test, control, note) => {
     }
 };
 const assertSimilar = (test, control, note) => {
-    if (test.toString() == control.toString()) { 
+    if (test != null && test.toString() == control.toString()) { 
         console.log(`✔️  Test Passed: Value == ${control}`); 
     }
     else {
