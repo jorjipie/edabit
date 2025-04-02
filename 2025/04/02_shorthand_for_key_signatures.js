@@ -1,11 +1,17 @@
 // https://edabit.com/challenge/mTT8M47D6EuEdTXLv
+
 function fullKeyName(piece) {
-	const arr = piece.split(' '), inIndex = arr.indexOf('in'), majorCharCode = arr[inIndex + 1].charCodeAt(0);
-    const key = majorCharCode > 64 && majorCharCode < 91
-        ? arr[inIndex + 1] + " major"
-        : arr[inIndex + 1].substring(0, 1).toUpperCase() + arr[inIndex + 1].substring(1) + " minor";
-    return arr.slice(0, inIndex + 1).join(' ') + " " + key;
+	const arr = piece.split(' ')
+        , inIndex = arr.indexOf('in')
+        , majorCharCode = arr[inIndex + 1].charCodeAt(0)
+        , key = majorCharCode > 64 && majorCharCode < 91
+			? arr[inIndex + 1] + " major"
+			: arr[inIndex + 1].substring(0, 1).toUpperCase() 
+				+ arr[inIndex + 1].substring(1) + " minor";
+
+	return arr.slice(0, inIndex + 1).join(' ') + " " + key;
 }
+
 const Test = require('../../test.js');
 Test.assertEquals(fullKeyName("Prelude in C"), "Prelude in C major")
 Test.assertEquals(fullKeyName("Fugue in c"), "Fugue in C minor")
