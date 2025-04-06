@@ -1,11 +1,9 @@
 // https://edabit.com/challenge/5X9SgidXaNf7pikbp
 
-const sumOfMissingNums = arr => arr
-    .filter(c => !isNaN(c))
-    .map(c => parseInt(c))
-    .sort((a, b) => a - b)
-    .reduce((acc, curr, index, array) => 
-        index > 0 ? acc + curr - array[index - 1] - 1 : 0, 0);
+const sumOfMissingNums = arr => {
+    arr = arr.filter(c => !isNaN(c));
+    return Math.max(...arr) - Math.min(...arr) - arr.length + 1;
+}
 
 const Test = require('../../test.js');
 Test.assertEquals(sumOfMissingNums(['1', '3', '5', '7', '9']), 4)
