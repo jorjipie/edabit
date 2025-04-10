@@ -1,11 +1,13 @@
 // https://edabit.com/challenge/aZiwEFEdFvWoBvDWS
 
-function getStudentsWithNamesAndAvgNote(students) {
-	return students.map(student => {
-        console.log(student);
-        return { name: student.name, avgNote: student.notes.length == 0 ? 0 : student.notes.reduce((sum, note) => sum + note) / student.notes.length };
-    });
-}
+const getStudentsWithNamesAndAvgNote = students => 
+    students.map(student => ({
+        name: student.name, 
+        avgNote: student.notes.length == 0 
+            ? 0 
+            : student.notes.reduce((sum, note) => sum + note) / student.notes.length 
+    }));
+
 
 const Test = require('../../test.js');
 const objectsAreEqual = (actual, expected) => Object.keys(expected).every(

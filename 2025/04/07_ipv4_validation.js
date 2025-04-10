@@ -5,7 +5,9 @@ const isValidIP = str => {
     const rex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})$/i
     if (octets.length != 4 
         || octets.some(octet => !(rex.test(octet))
-            || (octet.length > 1 && octet[0] == 0))) { return false; }
+            || (octet.length > 1 && octet[0] == 0))) { 
+        return false; 
+    }
     return true;
 };
 
