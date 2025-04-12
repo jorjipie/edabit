@@ -1,6 +1,19 @@
 // https://edabit.com/challenge/6gHvzbxGhD2uKoGXg
 
-const fibo = n => n <= 1 ? n : fibo(n - 1) + fibo(n - 2);
+// const fibo = n => {
+//     if (n <= 1) { return n; }
+//     let arr = new Array(n + 1).fill(-1)
+//     return nthFibo(n, arr);
+// };
+const fibo = (n, arr) => {
+    if (n <= 1) { return n; }
+    if (arr == null) {
+        arr = new Array(n + 1).fill(-1);
+    }
+    if (arr[n] !== -1) { return arr[n]; }
+    arr[n] = fibo(n - 1, arr) + fibo(n - 2, arr);
+    return arr[n];
+}
 
 const Test = require('../../test.js');
 Test.assertEquals(fibo(1), 1)
