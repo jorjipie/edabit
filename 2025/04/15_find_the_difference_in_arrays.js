@@ -1,8 +1,7 @@
 // https://edabit.com/challenge/D5RD2zxsmykLg8GCE
 
-const difference = (array, ...arrays) => {
-    return array.filter(c => (arrays.every(arr => arr.indexOf(c) == -1)));
-}
+const difference = (array, ...arrays) => 
+    array.filter(c => (arrays.every(arr => arr.indexOf(c) == -1)));
 
 const Test = require('../../test.js');
 Test.assertSimilar(difference([1,2,3], [2,3,4]), [1]);

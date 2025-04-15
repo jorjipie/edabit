@@ -3,7 +3,7 @@
 const lookAndSay = num => {
     const inputStr = '' + num;
     if (inputStr.length & 1) { return 'invalid'; }
-    let resultStr = '', repeats = 0;
+    let resultStr = '';
     for (let i = 0; i < inputStr.length; i += 2) {
         resultStr += inputStr[i+1].repeat(parseInt(inputStr[i]));
     }
