@@ -4,7 +4,9 @@ const sockMerchant = arr => {
     let unmatched = [], matchCount = 0, matchIndex = -1;
     for (let i = 0; i < arr.length; i++) {
         matchIndex = unmatched.indexOf(arr[i]);
-        if (matchIndex == -1) { unmatched.push(arr[i]); }
+        if (matchIndex == -1) { 
+            unmatched.push(arr[i]); 
+        }
         else { 
             matchCount++;
             unmatched.splice(matchIndex, 1);
