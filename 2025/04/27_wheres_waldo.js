@@ -11,7 +11,6 @@ const whereIsWaldo = rows => {
             }
         }
     }
-
 }
 
 Test.assertSimilar(whereIsWaldo([
